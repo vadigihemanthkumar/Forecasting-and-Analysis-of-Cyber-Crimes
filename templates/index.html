@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Crime Analysis using Machine Learning</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="static/main.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <div class="brand"><h2>Forecasting and Analysis of Cyber Crimes</h2></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/predictions">Forecast</a>
+        <a href="/about">About</a>
+        <a href="/form">Analysis</a>
+        <a href="/CA">Comparative Analysis</a>
+      </nav>
+    </header>
+    <div class="main">
+      <div class="content">
+        <h3 style="color: Black">Cyber Crime?</h3>
+        <p>Cybercrime is a crime that involves a computer and a network. The computer may have been used in the commission of a crime, or it may be the target. Cybercrime may harm someone's security and financial health. There are many privacy concerns surrounding Cybercrime when confidential information is intercepted or disclosed, lawfully or otherwise. Internationally, both governmental and non-state actors engage in cybercrimes, including espionage, financial theft, and other cross-border crimes. Cybercrimes crossing international borders and involving the actions of at least one nation-state are sometimes referred to as cyberwarfare. Warren Buffett describes Cybercrime as the "number one problem with mankind" and "poses real risks to humanity." A report (sponsored by McAfee) published in 2014 estimated that the annual damage to the global economy was $445 billion. A 2016 report by Cybersecurity ventures predicted that global damages incurred as a result of cybercrime would cost up to $6 trillion annually by 2021 and $10.5 trillion annually by 2025. Approximately $1.5 billion was lost in 2012 to online credit and debit card fraud in the US. In 2018, a study by the Center for Strategic and International Studies (CSIS), in partnership with McAfee, concludes that nearly one percent of global GDP, close to $600 billion, is lost to cybercrime each year. The World Economic Forum 2020 Global Risk report confirmed that organized Cybercrimes bodies are joining forces to perpetrate criminal activities online while estimating the likelihood of their detection and prosecution to be less than 1 percent in the US.</p>
+        <br>
+        <center>
+        <h2>Search For a State/UT</h2><br>
+        <div class="search-box">
+          <select name="states" id="get_val">
+            <option value="">Select</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="A & N Islands">A & N Islands</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="D&N Haveli">D&N Haveli</option>
+              <option value="Daman & Diu">Daman & Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Puducherry">Puducherry</option>
+            <!-- Add more options as needed -->
+          </select>
+          <button id="main-btn">Search</button>
+        </div>
+        <div class="more_info">
+          <h2 id="set_title"></h2>
+          <div class="info set-val">
+            <div class="set-info"></div>
+            <div id="graph-plot" style="width: 100%; height: 300px"></div>
+          </div>
+        </div>
+        </center>
+      </div>
+      <div class="sidebar">
+          <h2>Key Figures</h2>
+          <div class="widget">
+            <h3>Latest Cyber Crime Records</h3>
+            <div class="widget_detail">
+              <div class="widget_detail_info">
+                <a href="https://factly.in/data-in-20-years-between-2002-2021-five-states-accounted-for-more-than-2-3rd-of-the-cybercrimes-reported-in-india/#:~:text=Karnataka%20and%20Telangana%20have%20a,the%20state%20during%20that%20period">Most Number of Cyber Crimes in 2021</a>
+                <p>Karnataka with 15654 Cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <a href="#">Least Number of Cyber Crimes in 2021</a>
+                <p>D&N Haveli and Daman & Diu for only 4 cases Registered!</p>
+              </div>
+              <div class="widget_detail_info">
+                <a href="#">Total Cases in 2021</a>
+                <p>57536 in India.</p>
+              </div>
+            </div>
+          </div>
+          <div class="widget">
+            <h3>Cyber Crime Records</h3>
+            <div class="widget_detail">
+              <div class="widget_detail_info">
+                <a href="#">Most Number of Cyber Crimes in 2020</a>
+                <p>Karnataka with 13541 Cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <a href="#">Least NUmber of Cyber Crimes in 2020</a>
+                <p>D&N Haveli With 0 Cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <a href="#">Total Cases in 2020</a>
+                <p>51307 in India.</p>
+              </div>
+            </div>
+          </div>
+          <div class="widget">
+            <h3>Did You Know?</h3>
+            <div class="widget_detail">
+              <div class="widget_detail_info">
+                <a href="#">Most Affected State in Last 6 Years</a>
+                <p>Uttar Pradesh with 55,626 cases from 2015-2021!</p>
+              </div>
+              <div class="widget_detail_info">
+                <a href="#">Least Affected State in Last 6 Years</a>
+                <p>Mizoram along with D&N Haveli With Only 6 cases!</p>
+              </div>
+              <div class="widget_detail_info">
+                <a href="#">Current Rate Of Cyber Crime</a>
+                <p>Rate of Cyber Crime is increasing Every Year!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+  <div class="footer-content">
+    <p>Developed by: R.SudhaKishore, A.Narasimha, B.TejaKumar, A.Rohith, Ch.VenkateswaraRao</p>
+  </div>
+</footer>
+
+
+  <script>
+    $(document).ready(function () {
+      function show_chart(graph) {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable(graph);
+
+          var options = {
+            is3D: true,
+          };
+
+          var chart = new google.visualization.PieChart(
+            document.getElementById("graph-plot")
+          );
+          chart.draw(data, options);
+        }
+      }
+
+      let initial = 0;
+
+      $("#main-btn").click(function (e) {
+        $(".set-val").css("display", "flex");
+        $("#set_title").css("display", "flex");
+        let html = "";
+        let val = $("#get_val").val();
+        fetch("/api", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: val,
+          }),
+        })
+          .then((res) => res.json())
+          .then((results) => {
+            for (const key in results.data) {
+              html += `<li style="color:royalblue; list-style:none;">${key} : <span style="color:hotpink;">${results.data[key]}</span></li>`;
+            }
+            $("#set_title").html("");
+            $(".set-info").html("");
+            $("#set_title").append(
+              `<h2>Cyber Crime Overview of ${results.name} </h2>`
+            );
+            $(".set-info").append(html);
+            show_chart(results.graph);
+          });
+      });
+
+      $(".roll").click(function (e) {
+        let n = parseInt($(this).attr("data-number"));
+        $(".slide").css("transform", `translateX(-${n * 100}%)`);
+      });
+    });
+  </script>
+</body>
+</html>

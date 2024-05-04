@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/main.css"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Cyber Crime Analysis using Machine Learning</title>
+    <style>
+        /* Add some style to the page */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure that body stretches to at least the height of the viewport */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            flex: 1; /* Let the container grow to fill remaining space */
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .about-us-image {
+            width: 100%;
+            height: auto;
+            margin: 40px 0;
+        }
+
+        /* Add some hover effects to the buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        .about-us-image {
+            width: 100%;
+            height: 350px;
+        }
+
+        footer {
+            background: rgb(73, 48, 212);
+            color: #fff;
+            font-size: 18px;
+            padding: 20px;
+            text-align: center;
+        }
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+    </style>
+</head>
+<body>
+<header>
+    <div class="brand">
+        <h2>Forecasting and Analysis of Cyber Crimes</h2>
+    </div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/predictions">Forecast</a>
+        <a href="/about">About</a>
+        <a href="/form">Analysis</a>
+        <a href="/CA">Comparative Analysis</a>
+    </nav>
+</header>
+<div class="container">
+    <h3>Comparative Analysis on Ensemble Learning Models</h3>
+    <p>
+The comparative analysis for the project on forecasting and analyzing cyber crimes using ensemble learning techniques involves selecting appropriate evaluation metrics like R2_score, Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE), dividing the dataset into training and testing sets while maintaining temporal order, implementing ensemble techniques (Bagging, Random Forest, Gradient Boosting, Ada Boosting, XG Boost Regressor) with hyperparameter tuning, evaluating models on the testing set using the chosen metrics, creating visualizations to illustrate results, optionally performing statistical tests for significant differences, interpreting findings to identify the best-performing model based on predictive accuracy and other factors like interpretability and efficiency, and providing recommendations and potential areas for further research or model enhancements.</p>
+    <table style="width:100%">
+        <tr style = "font-size: 18px ; font-weight: bold; color: Black; background-color: lightgrey;">
+            <th>Model Name</th>
+            <th>R2 Score</th>
+            <th>Predicted Value</th>
+            <th>Mean Squared Error</th>
+            <th>Mean Absolute Error</th>
+            <th>Root Mean Squared Error</th>
+        </tr>
+        <tr>
+            <th>Bagging</th>
+            <td>87.415654</td>
+            <td>637.220000</td>
+            <td>51787.382650</td>
+            <td>171.175000</td>
+            <td>227.568413</td>
+        </tr>
+        <tr>
+            <th>Random Forest</th>
+            <td>86.592072</td>
+            <td>676.440000</td>
+            <td>55176.608050</td>
+            <td>193.545000</td>
+            <td>234.897016</td>
+        </tr>
+        <tr>
+            <th>Gradient Boosting</th>
+            <td>96.205750</td>
+            <td>730.396274</td>
+            <td>46842.544281</td>
+            <td>124.543989</td>
+            <td>249.913436</td>
+        </tr>
+        <tr>
+            <th>Ada Boosting</th>
+            <td>88.545114</td>
+            <td>721.650000</td>
+            <td>47139.406250</td>
+            <td>196.975000</td>
+            <td>217.116112</td>
+        </tr>
+        <tr>
+            <th>XGBoost</th>
+            <td>99.196773</td>
+            <td>536.015137</td>
+            <td>33054.561675</td>
+            <td>141.886230</td>
+            <td>229.972387</td>
+        </tr>
+    </table>
+</div>
+<footer>
+    <div class="footer-content">
+        <p>Developed by: R.SudhaKishore, A.Narasimha, B.TejaKumar, A.Rohith, Ch.VenkateswaraRao</p>
+    </div>
+</footer>
+</body>
+</html>

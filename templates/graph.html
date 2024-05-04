@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="static/main.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      select {
+        padding: 10px;
+      }
+      select,
+      input {
+        margin: 10px 0;
+      }
+      .graph{
+        width: 80%;
+    /* border: 1px solid black; */
+    margin-left: 10%;
+    border-radius: 3px;
+    box-shadow: grey 1px 2px 7px 3px;
+    margin-top: 4%;
+      }
+      h1{
+        margin-left: 38%;
+        margin-top: 2%;
+      }
+      .back{
+        background-color: rgb(106, 108, 240);
+    width: 96px;
+    font-weight: 600;
+    color: ghostwhite;
+    margin-left: 184px;
+    border-radius: 2px;
+    text-decoration: none;
+    padding: 10px 30px;
+    box-shadow: 1px 4px 4px grey;
+    margin-top: 60px;
+      }
+    </style>
+    <title>Cyber Crime Analysis using Machine Learning</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="brand"><h2>Forecasting and Analysis of Cyber Crimes</h2></div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/predictions">Forecast</a>
+          <a href="/about">About</a>
+          <a href="/form">Analysis</a>
+          <a href="/CA">Comparative Analysis</a>
+        </nav>
+      </header>
+
+        
+        <a href="/form" class="back">Back</a>
+      
+  <h1>Cybercrime Cases Analysis</h1>
+  <!-- plotly graph goes here -->
+  <div class="graph">
+  {{ plot_div|safe }}
+   
+  {% if error %}
+  
+</div>
+
+<script>
+    alert("{{ error }}");
+    window.location.href='/form';
+</script>
+{% endif %}
+</div>
+</body>
+</html>

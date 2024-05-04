@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/form.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="static/main.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+
+    </style>
+    <title>Cyber Crime Analysis using Machine Learning</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="brand"><h2>Analysis of Cyber Crimes</h2></div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/predictions">Forecast</a>
+          <a href="/about">About</a>
+          <a href="/form">Analysis</a>
+          <a href="/CA">Comparative Analysis</a>
+        </nav>
+      </header>
+  <div class="container">
+    <!-- form fields go here -->
+   <form action="/graph" method="post">
+
+    <label for="plot-type">Select plot type:</label><br>
+		<select name="plot-type" id="plot-type">
+      <option value="">Select type</option>
+			<option value="crime-types">All state vs Count of cybercrime</option>
+			<option value="state-count">State vs Count of cybercrimes</option>
+      <option value="line-graph">Trend of Cybercrimes over the Years</option>
+      <option value="pie-graph">Distribution of Internet Subscriptions in states</option>
+		</select>
+    <br>
+
+    <div id="year-input">   
+    <label for="year">Year:</label><br>
+    <input type="number" id="year" name="year" value="2017" min="2016" max="2020"><br>
+      </div>
+
+      <div id="cybercrime-input">
+    <label for="cybercrime">Type of Cybercrime:</label><br>
+    <select id="cybercrime" name="cybercrime">
+      <option value="">Select Crime type</option>
+      <option value="Cyber Stalking">Cyber Stalking</option>
+      <option value="Identity theft">Identity theft</option>
+      <option value="personation by using computer">Personation by using computer</option>
+      <option value="ATM">ATM</option>
+      <option value="Online Banking Fraud">Online Banking Fraud</option>
+      <option value="Forgery (Sec.465,468 & 471)">Forgery (Sec.465,468 & 471)</option>
+    </select><br>
+  </div>
+
+  <div id="state-input">
+    <label for="state">State:</label><br>
+    <select name="state" id="state">
+      <option value="">Select State</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Odisha">Odisha</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="West Bengal">West Bengal</option>
+    </select>
+  <br>
+</div>
+    <input type="submit" value="Submit" id="submit">
+  </form>
+  <div class="side-img">
+    <img class="about-us-image" src="static/images/cyber.jpg" alt="About Us">
+  </div>
+</div>
+</div>
+<footer>
+  <div class="footer-content">
+    <p>Developed by: R.SudhaKishore, A.Narasimha, B.TejaKumar, A.Rohith, Ch.VenkateswaraRao</p>
+  </div>
+</footer>
+<script>
+
+var plotType = document.getElementById("plot-type");
+var stateInput = document.getElementById("state-input");
+var yearInput = document.getElementById("year-input");
+var cybercrimeInput = document.getElementById("cybercrime-input");
+var submit = document.getElementById("submit");
+
+stateInput.style.display = "none";
+yearInput.style.display = "none";
+cybercrimeInput.style.display = "none";
+submit.style.display = "none";
+
+// Add an event listener to the plot-type dropdown menu
+plotType.addEventListener("change", function() {
+  // If "crime-types" is selected, show the state and year input fields and hide the cybercrime input field
+  if (plotType.value == "") {
+    stateInput.style.display = "none";
+    yearInput.style.display = "none";
+    cybercrimeInput.style.display = "none";
+    submit.style.display = "none";
+  }
+  else if (plotType.value == "crime-types") {
+    stateInput.style.display = "none";
+    yearInput.style.display = "block";
+    cybercrimeInput.style.display = "block";
+    submit.style.display = "block";
+  }
+  // If "state-count" is selected, show the year and cybercrime input fields and hide the state input field
+  else if (plotType.value == "state-count") {
+    stateInput.style.display = "block";
+    yearInput.style.display = "block";
+    cybercrimeInput.style.display = "none";
+    submit.style.display = "block";
+  }
+  else if (plotType.value == "line-graph") {
+    stateInput.style.display = "none";
+    yearInput.style.display = "none";
+    cybercrimeInput.style.display = "none";
+    submit.style.display = "block";
+  }
+  else if (plotType.value == "pie-graph") {
+    stateInput.style.display = "block";
+    yearInput.style.display = "none";
+    cybercrimeInput.style.display = "none";
+    submit.style.display = "block";
+  }
+});
+
+</script>
+</body>
+</html>
